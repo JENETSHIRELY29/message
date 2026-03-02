@@ -4,45 +4,105 @@
     <title>For My Love 💖</title>
     <style>
         body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
             text-align: center;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #ff9a9e, #fad0c4);
-            padding: 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            max-width: 400px;
+            animation: fadeIn 2s ease-in-out;
         }
+
         h1 {
-            color: white;
-        }
-        button {
-            background-color: white;
             color: #ff4b7d;
-            padding: 15px 25px;
-            font-size: 18px;
+            font-size: 22px;
+        }
+
+        p {
+            color: #555;
+            margin-top: 10px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
             border: none;
             border-radius: 25px;
+            background: #ff4b7d;
+            color: white;
+            font-size: 16px;
             cursor: pointer;
-            margin-top: 20px;
+            transition: 0.3s;
         }
+
+        button:hover {
+            background: #ff1e5a;
+            transform: scale(1.05);
+        }
+
         img {
-            margin-top: 30px;
-            max-width: 300px;
-            display: none;
+            margin-top: 20px;
+            max-width: 100%;
             border-radius: 15px;
+            display: none;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: absolute;
+            color: white;
+            animation: float 5s infinite;
+            font-size: 20px;
+        }
+
+        @keyframes float {
+            0% {transform: translateY(100vh); opacity: 0;}
+            50% {opacity: 1;}
+            100% {transform: translateY(-10vh); opacity: 0;}
         }
     </style>
 </head>
+
 <body>
 
-<h1>My love, I need to say something sweet about our love 💖</h1>
-
-<button onclick="showGift()">Open the gift inside 🎁</button>
-
-<br>
-
-<img id="giftImage" src="love.jpg">
+<div class="card">
+    <h1>My love, I need to say something sweet about our love 💖</h1>
+    <p>You are the most beautiful part of my life 💞</p>
+    <button onclick="showGift()">Open the gift inside 🎁</button>
+    <img id="giftImage" src="love.jpg">
+</div>
 
 <script>
 function showGift() {
     document.getElementById("giftImage").style.display = "block";
+}
+
+/* Create floating hearts */
+for(let i = 0; i < 15; i++) {
+    let heart = document.createElement("div");
+    heart.innerHTML = "💖";
+    heart.className = "heart";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 5) + "s";
+    document.body.appendChild(heart);
 }
 </script>
 
