@@ -88,11 +88,15 @@
     <p>You are the most beautiful part of my life 💞</p>
     <button onclick="showGift()">Open the gift inside 🎁</button>
     <img id="giftImage" src="love.jpg">
+    <audio id="bgMusic" src="music.mp3"></audio>
 </div>
 
 <script>
 function showGift() {
     document.getElementById("giftImage").style.display = "block";
+
+    var music = document.getElementById("bgMusic");
+    music.play();
 }
 
 /* Create floating hearts */
