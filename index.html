@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For My Love 💖</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            padding: 50px;
+        }
+        h1 {
+            color: white;
+        }
+        button {
+            background-color: white;
+            color: #ff4b7d;
+            padding: 15px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        img {
+            margin-top: 30px;
+            max-width: 300px;
+            display: none;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My love, I need to say something sweet about our love 💖</h1>
+
+<button onclick="showGift()">Open the gift inside 🎁</button>
+
+<br>
+
+<img id="giftImage" src="love.jpg">
+
+<script>
+function showGift() {
+    document.getElementById("giftImage").style.display = "block";
+}
+</script>
+
+</body>
+</html>
